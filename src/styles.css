@@ -138,6 +138,25 @@
   color: transparent;
 }
 
+/* Chunky 3D button — beveled face with a solid dark "edge" underneath.
+ * Pair with motion whileHover={{ y: -2 }} / whileTap={{ y: 4 }} for the press. */
+@utility btn-3d {
+  box-shadow:
+    inset 0 2px 0 color-mix(in oklab, white 30%, transparent),
+    inset 0 -3px 0 color-mix(in oklab, black 14%, transparent),
+    0 6px 0 var(--care-deep),
+    0 18px 30px -14px color-mix(in oklab, var(--care-deep) 75%, transparent);
+  transition: box-shadow 0.15s ease;
+}
+
+@utility btn-3d-pressed {
+  box-shadow:
+    inset 0 2px 0 color-mix(in oklab, white 20%, transparent),
+    inset 0 -2px 0 color-mix(in oklab, black 10%, transparent),
+    0 2px 0 var(--care-deep),
+    0 8px 16px -10px color-mix(in oklab, var(--care-deep) 60%, transparent);
+}
+
 @utility clinic-grain {
   background-image:
     radial-gradient(color-mix(in oklab, var(--care) 12%, transparent) 1px, transparent 1px),

@@ -55,10 +55,10 @@ export function SiteNav() {
         </span>
         <motion.button
           type="button"
-          whileHover={{ scale: 1.05, boxShadow: "var(--shadow-glow)" }}
-          whileTap={{ scale: 0.95 }}
-          transition={{ type: "spring", stiffness: 420, damping: 18 }}
-          className="rounded-full bg-primary px-5 py-2 text-sm font-extrabold text-primary-foreground"
+          whileHover={{ y: -2 }}
+          whileTap={{ y: 4 }}
+          transition={{ type: "spring", stiffness: 500, damping: 18 }}
+          className="btn-3d rounded-full bg-primary px-5 py-2 text-sm font-extrabold text-primary-foreground"
         >
           Sign in
         </motion.button>
