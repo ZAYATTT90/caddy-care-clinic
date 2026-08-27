@@ -16,7 +16,7 @@ export function QueueTeaser() {
     return () => clearInterval(id);
   }, []);
 
-  const doctor = DOCTORS[0];
+  const doctor = DOCTORS[0]!;
 
   return (
     <motion.section
