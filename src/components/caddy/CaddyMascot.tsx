@@ -40,12 +40,12 @@ function CaddyBody({ calm }: { calm: boolean }) {
       <mesh ref={body} castShadow>
         <sphereGeometry args={[0.95, 64, 64]} />
         <meshPhysicalMaterial
-          color="#dff4f7"
-          roughness={0.12}
+          color="#f2fbfc"
+          roughness={0.22}
           metalness={0.1}
           clearcoat={1}
           clearcoatRoughness={0.05}
-          transmission={0.28}
+          transmission={0}
           thickness={0.9}
           ior={1.35}
         />
@@ -60,11 +60,11 @@ function CaddyBody({ calm }: { calm: boolean }) {
       {/* eyes */}
       {[-0.24, 0.24].map((x) => (
         <mesh key={x} position={[x, 0.08, 0.94]}>
-          <sphereGeometry args={[0.085, 32, 32]} />
+          <sphereGeometry args={[0.11, 32, 32]} />
           <meshStandardMaterial
             color="#7ce7f5"
             emissive="#4fd6ec"
-            emissiveIntensity={1.6}
+            emissiveIntensity={2.2}
             roughness={0.2}
           />
         </mesh>
@@ -126,7 +126,7 @@ export default function CaddyMascot() {
         <CaddyBody calm={calm} />
       </Float>
       <ContactShadows position={[0, -1.6, 0]} opacity={0.28} scale={7} blur={3} far={3} />
-      <Environment preset="sunset" />
+      <Environment preset="apartment" environmentIntensity={0.55} />
     </Canvas>
   );
 }
