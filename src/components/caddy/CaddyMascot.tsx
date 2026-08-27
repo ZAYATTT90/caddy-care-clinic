@@ -53,13 +53,13 @@ function CaddyBody({ calm }: { calm: boolean }) {
 
       {/* visor */}
       <mesh position={[0, 0.08, 0.8]} rotation={[0, 0, Math.PI / 2]}>
-        <capsuleGeometry args={[0.17, 0.42, 8, 24]} />
+        <capsuleGeometry args={[0.2, 0.55, 8, 24]} />
         <meshStandardMaterial color="#1f3a44" roughness={0.25} metalness={0.4} />
       </mesh>
 
       {/* eyes */}
-      {[-0.2, 0.2].map((x) => (
-        <mesh key={x} position={[x, 0.1, 0.95]}>
+      {[-0.26, 0.26].map((x) => (
+        <mesh key={x} position={[x, 0.09, 0.93]}>
           <sphereGeometry args={[0.11, 32, 32]} />
           <meshStandardMaterial
             color="#7ce7f5"
