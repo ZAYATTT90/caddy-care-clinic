@@ -6,17 +6,17 @@ import doc4 from "@/assets/doc-4.jpg";
 export type Specialization = {
   id: string;
   label: string;
-  icon: string;
+  icon: "tooth" | "stethoscope" | "sparkles" | "baby" | "heart" | "eye";
   tint: "care" | "ember" | "gold";
 };
 
 export const SPECIALIZATIONS: Specialization[] = [
-  { id: "dentist", label: "Dentist", icon: "🦷", tint: "care" },
-  { id: "physician", label: "General Physician", icon: "🩺", tint: "ember" },
-  { id: "skin", label: "Skin Specialist", icon: "✨", tint: "gold" },
-  { id: "pediatric", label: "Pediatrics", icon: "🧒", tint: "care" },
-  { id: "cardio", label: "Cardiology", icon: "❤️", tint: "ember" },
-  { id: "eye", label: "Eye Care", icon: "👁️", tint: "gold" },
+  { id: "dentist", label: "Dentist", icon: "tooth", tint: "care" },
+  { id: "physician", label: "General Physician", icon: "stethoscope", tint: "ember" },
+  { id: "skin", label: "Skin Specialist", icon: "sparkles", tint: "gold" },
+  { id: "pediatric", label: "Pediatrics", icon: "baby", tint: "care" },
+  { id: "cardio", label: "Cardiology", icon: "heart", tint: "ember" },
+  { id: "eye", label: "Eye Care", icon: "eye", tint: "gold" },
 ];
 
 export type Doctor = {

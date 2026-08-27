@@ -160,13 +160,24 @@
   animation: foil-sweep 4s linear infinite;
 }
 
+/*
+ * Reduced motion: kill CSS-driven loops and page transitions.
+ * NOTE: never override animation-duration globally with !important — that
+ * breaks Framer Motion's WAAPI entrances and leaves elements stuck at their
+ * initial opacity. Motion handles reduced motion itself via MotionConfig.
+ */
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .foil-animate {
+    animation: none;
+  }
+
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
   }
 }

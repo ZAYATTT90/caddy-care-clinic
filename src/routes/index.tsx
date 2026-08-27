@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "motion/react";
+import { Search } from "lucide-react";
 import { CaddyStage } from "@/components/caddy/CaddyStage";
 import { SpecializationPills } from "@/components/caddy/SpecializationPills";
 import { DoctorCarousel } from "@/components/caddy/DoctorCarousel";
@@ -99,9 +100,7 @@ function Home() {
               transition={spring}
               className="glass-card flex items-center gap-2 rounded-full p-2"
             >
-              <span aria-hidden className="pl-2 text-lg">
-                🔍
-              </span>
+              <Search aria-hidden className="ml-2 size-5 text-muted-foreground" />
               <input
                 aria-label="Search doctors, clinics or symptoms"
                 placeholder="Search doctors, clinics or symptoms"

@@ -1,5 +1,15 @@
 import { motion } from "motion/react";
 import { SPECIALIZATIONS } from "@/lib/home-data";
+import { Baby, Eye, Heart, Smile, Sparkles, Stethoscope } from "lucide-react";
+
+const ICONS = {
+  tooth: Smile,
+  stethoscope: Stethoscope,
+  sparkles: Sparkles,
+  baby: Baby,
+  heart: Heart,
+  eye: Eye,
+} as const;
 
 const container = {
   hidden: {},
@@ -31,7 +41,9 @@ export function SpecializationPills() {
       viewport={{ once: true, amount: 0.3 }}
       className="flex flex-wrap justify-center gap-3"
     >
-      {SPECIALIZATIONS.map((s) => (
+      {SPECIALIZATIONS.map((s) => {
+        const Icon = ICONS[s.icon];
+        return (
         <motion.li key={s.id} variants={pill}>
           <motion.button
             type="button"
@@ -45,12 +57,13 @@ export function SpecializationPills() {
               whileHover={{ rotate: 10, scale: 1.1 }}
               transition={{ type: "spring", stiffness: 300, damping: 12 }}
             >
-              <span aria-hidden>{s.icon}</span>
+              <Icon aria-hidden className="size-4" strokeWidth={2.4} />
             </motion.span>
             {s.label}
           </motion.button>
         </motion.li>
-      ))}
+        );
+      })}
     </motion.ul>
   );
 }
