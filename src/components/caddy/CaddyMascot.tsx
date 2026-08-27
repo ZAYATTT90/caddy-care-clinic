@@ -45,21 +45,21 @@ function CaddyBody({ calm }: { calm: boolean }) {
           metalness={0.1}
           clearcoat={1}
           clearcoatRoughness={0.05}
-          transmission={0.55}
-          thickness={1.4}
+          transmission={0.28}
+          thickness={0.9}
           ior={1.35}
         />
       </mesh>
 
       {/* visor */}
-      <mesh position={[0, 0.05, 0.72]} rotation={[-0.08, 0, 0]}>
+      <mesh position={[0, 0.05, 0.83]} rotation={[-0.08, 0, 0]}>
         <capsuleGeometry args={[0.16, 0.5, 8, 24]} />
         <meshStandardMaterial color="#1f3a44" roughness={0.25} metalness={0.4} />
       </mesh>
 
       {/* eyes */}
       {[-0.24, 0.24].map((x) => (
-        <mesh key={x} position={[x, 0.08, 0.86]}>
+        <mesh key={x} position={[x, 0.08, 0.94]}>
           <sphereGeometry args={[0.085, 32, 32]} />
           <meshStandardMaterial
             color="#7ce7f5"
@@ -71,7 +71,7 @@ function CaddyBody({ calm }: { calm: boolean }) {
       ))}
 
       {/* care cross badge */}
-      <group position={[0, -0.45, 0.78]} rotation={[0.3, 0, 0]}>
+      <group position={[0, -0.5, 0.85]} rotation={[0.3, 0, 0]}>
         <mesh>
           <boxGeometry args={[0.32, 0.1, 0.05]} />
           <meshStandardMaterial color="#f0a054" emissive="#c9762f" emissiveIntensity={0.35} />
