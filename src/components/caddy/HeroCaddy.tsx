@@ -22,7 +22,7 @@ export function HeroCaddy() {
           background:
             "radial-gradient(circle at 50% 45%, color-mix(in oklab, var(--care) 55%, transparent), color-mix(in oklab, var(--ember) 32%, transparent) 55%, transparent 72%)",
         }}
-        animate={calm ? undefined : { scale: [0.92, 1.06, 0.92], opacity: [0.45, 0.8, 0.45] }}
+        animate={calm ? {} : { scale: [0.92, 1.06, 0.92], opacity: [0.45, 0.8, 0.45] }}
         transition={{ duration: 4.6, repeat: Infinity, ease: "easeInOut" }}
       />
 
@@ -33,7 +33,7 @@ export function HeroCaddy() {
         height={1024}
         className="relative w-full select-none drop-shadow-[0_30px_50px_color-mix(in_oklab,var(--charcoal)_28%,transparent)]"
         draggable={false}
-        animate={calm ? undefined : { y: [-12, 12, -12], rotate: [-2, 2.5, -2] }}
+        animate={calm ? {} : { y: [-12, 12, -12], rotate: [-2, 2.5, -2] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
         whileHover={{ scale: 1.03 }}
       />
