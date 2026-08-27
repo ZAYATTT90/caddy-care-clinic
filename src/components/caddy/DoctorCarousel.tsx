@@ -131,10 +131,10 @@ function DoctorCard({
 
       <motion.button
         type="button"
-        whileHover={{ scale: 1.035, boxShadow: "var(--shadow-glow)" }}
-        whileTap={{ scale: 0.96 }}
-        transition={{ type: "spring", stiffness: 420, damping: 18 }}
-        className="relative mt-4 flex w-full items-center justify-center gap-2 overflow-hidden rounded-full bg-primary py-3 text-sm font-extrabold text-primary-foreground"
+        whileHover={{ y: -2 }}
+        whileTap={{ y: 4 }}
+        transition={{ type: "spring", stiffness: 500, damping: 18 }}
+        className="btn-3d relative mt-4 flex w-full items-center justify-center gap-2 overflow-hidden rounded-full bg-primary py-3 text-sm font-extrabold text-primary-foreground"
       >
         <motion.span
           aria-hidden
