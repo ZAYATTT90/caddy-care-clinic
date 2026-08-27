@@ -82,10 +82,10 @@ function Home() {
             >
               <motion.button
                 type="button"
-                whileHover={{ scale: 1.05, boxShadow: "var(--shadow-glow)" }}
-                whileTap={{ scale: 0.96 }}
-                transition={{ type: "spring", stiffness: 420, damping: 20 }}
-                className="rounded-full bg-primary px-7 py-3.5 text-sm font-extrabold text-primary-foreground"
+                whileHover={{ y: -2 }}
+                whileTap={{ y: 4 }}
+                transition={{ type: "spring", stiffness: 500, damping: 18 }}
+                className="btn-3d rounded-full bg-primary px-7 py-3.5 text-sm font-extrabold text-primary-foreground"
               >
                 Book an appointment
               </motion.button>
@@ -162,13 +162,10 @@ function Home() {
           </p>
           <motion.button
             type="button"
-            whileHover={{ scale: 1.05, boxShadow: "var(--shadow-glow)" }}
-            whileTap={{ scale: 0.96 }}
-            animate={{ scale: [1, 1.02, 1] }}
-            transition={{
-              scale: { duration: 2.4, repeat: Infinity, ease: "easeInOut" },
-            }}
-            className="mt-6 rounded-full bg-primary px-7 py-3 text-sm font-bold text-primary-foreground"
+            whileHover={{ y: -2 }}
+            whileTap={{ y: 4 }}
+            transition={{ type: "spring", stiffness: 500, damping: 18 }}
+            className="btn-3d mt-6 rounded-full bg-primary px-7 py-3 text-sm font-bold text-primary-foreground"
           >
             Talk to Caddy
           </motion.button>
