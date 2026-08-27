@@ -1,10 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "motion/react";
-import { Search } from "lucide-react";
-import { CaddyStage } from "@/components/caddy/CaddyStage";
+import { HeroCaddy } from "@/components/caddy/HeroCaddy";
+import { SiteNav } from "@/components/caddy/SiteNav";
 import { SpecializationPills } from "@/components/caddy/SpecializationPills";
 import { DoctorCarousel } from "@/components/caddy/DoctorCarousel";
 import { QueueTeaser } from "@/components/caddy/QueueTeaser";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
