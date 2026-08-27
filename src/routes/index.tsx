@@ -1,10 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "motion/react";
-import { Search } from "lucide-react";
-import { CaddyStage } from "@/components/caddy/CaddyStage";
+import { HeroCaddy } from "@/components/caddy/HeroCaddy";
+import { SiteNav } from "@/components/caddy/SiteNav";
 import { SpecializationPills } from "@/components/caddy/SpecializationPills";
 import { DoctorCarousel } from "@/components/caddy/DoctorCarousel";
 import { QueueTeaser } from "@/components/caddy/QueueTeaser";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -33,40 +34,16 @@ function Home() {
     <main className="relative min-h-screen overflow-x-hidden">
       <div aria-hidden className="clinic-grain pointer-events-none absolute inset-0 opacity-70" />
 
-      <div className="relative mx-auto max-w-6xl px-5 pb-24 pt-8 sm:px-8">
-        {/* top bar */}
-        <motion.nav
-          initial={{ opacity: 0, y: -18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={spring}
-          className="glass-card flex items-center justify-between rounded-full px-4 py-3"
-        >
-          <span className="font-display text-lg font-extrabold">
-            Caddy<span className="foil-text foil-animate"> Care</span>
-          </span>
-          <div className="flex items-center gap-2 text-xs font-bold">
-            <span className="hidden rounded-full bg-secondary px-3 py-1.5 text-muted-foreground sm:inline">
-              Karachi · Clifton
-            </span>
-            <motion.button
-              type="button"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.96 }}
-              transition={{ type: "spring", stiffness: 420, damping: 20 }}
-              className="rounded-full bg-primary px-4 py-1.5 text-primary-foreground"
-            >
-              Sign in
-            </motion.button>
-          </div>
-        </motion.nav>
+      <div className="relative mx-auto max-w-6xl px-5 pb-24 pt-4 sm:px-8">
+        <SiteNav />
 
         {/* HERO */}
-        <section className="grid items-center gap-6 pt-10 lg:grid-cols-[1.05fr_1fr]">
+        <section className="grid items-center gap-10 pt-12 lg:grid-cols-[1.1fr_1fr]">
           <motion.div
             initial="hidden"
             animate="show"
             variants={{ hidden: {}, show: { transition: { staggerChildren: 0.12 } } }}
-            className="order-2 space-y-5 lg:order-1"
+            className="order-2 space-y-6 lg:order-1"
           >
             <motion.p
               variants={{ hidden: { opacity: 0, y: 22 }, show: { opacity: 1, y: 0 } }}
@@ -77,19 +54,22 @@ function Home() {
             </motion.p>
 
             <motion.h1
-              variants={{ hidden: { opacity: 0, y: 34, scale: 0.96 }, show: { opacity: 1, y: 0, scale: 1 } }}
+              variants={{
+                hidden: { opacity: 0, y: 34, scale: 0.96 },
+                show: { opacity: 1, y: 0, scale: 1 },
+              }}
               transition={{ type: "spring", stiffness: 150, damping: 16 }}
-              className="hero-title text-5xl sm:text-6xl lg:text-7xl"
+              className="max-w-2xl font-display text-[2.6rem] font-extrabold leading-[1.05] tracking-tight sm:text-6xl lg:text-[4.2rem]"
             >
-              Doctor
-              <br />
-              in a tap
+              Book the right doctor
+              <br className="hidden sm:block" />{" "}
+              <span className="foil-text foil-animate">in a single tap</span>
             </motion.h1>
 
             <motion.p
               variants={{ hidden: { opacity: 0, y: 22 }, show: { opacity: 1, y: 0 } }}
               transition={spring}
-              className="max-w-md text-base text-muted-foreground"
+              className="max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg"
             >
               Caddy finds the right specialist, holds your slot and watches the queue for you — so you
               show up exactly when it&apos;s your turn.
@@ -98,29 +78,32 @@ function Home() {
             <motion.div
               variants={{ hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0 } }}
               transition={spring}
-              className="glass-card flex items-center gap-2 rounded-full p-2"
+              className="flex flex-wrap items-center gap-3"
             >
-              <Search aria-hidden className="ml-2 size-5 text-muted-foreground" />
-              <input
-                aria-label="Search doctors, clinics or symptoms"
-                placeholder="Search doctors, clinics or symptoms"
-                className="min-w-0 flex-1 bg-transparent px-1 text-sm outline-none placeholder:text-muted-foreground"
-              />
               <motion.button
                 type="button"
                 whileHover={{ scale: 1.05, boxShadow: "var(--shadow-glow)" }}
                 whileTap={{ scale: 0.96 }}
                 transition={{ type: "spring", stiffness: 420, damping: 20 }}
-                className="shrink-0 rounded-full bg-primary px-5 py-2.5 text-sm font-bold text-primary-foreground"
+                className="rounded-full bg-primary px-7 py-3.5 text-sm font-extrabold text-primary-foreground"
               >
-                Find care
+                Book an appointment
+              </motion.button>
+              <motion.button
+                type="button"
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.97 }}
+                transition={{ type: "spring", stiffness: 420, damping: 20 }}
+                className="glass-card rounded-full px-6 py-3.5 text-sm font-extrabold"
+              >
+                Browse specialities
               </motion.button>
             </motion.div>
 
             <motion.div
               variants={{ hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0 } }}
               transition={spring}
-              className="flex gap-6 pt-2 text-sm"
+              className="flex flex-wrap gap-8 pt-2 text-sm"
             >
               {[
                 ["1,200+", "verified doctors"],
@@ -128,22 +111,18 @@ function Home() {
                 ["24/7", "queue tracking"],
               ].map(([big, small]) => (
                 <div key={big}>
-                  <p className="font-display text-xl font-extrabold">{big}</p>
+                  <p className="font-display text-2xl font-extrabold">{big}</p>
                   <p className="text-xs text-muted-foreground">{small}</p>
                 </div>
               ))}
             </motion.div>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.86, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ type: "spring", stiffness: 120, damping: 14, mass: 1 }}
-            className="order-1 lg:order-2"
-          >
-            <CaddyStage />
-          </motion.div>
+          <div className="order-1 lg:order-2">
+            <HeroCaddy />
+          </div>
         </section>
+
 
         {/* SPECIALIZATIONS */}
         <section className="pt-14">

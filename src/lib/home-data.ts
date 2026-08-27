@@ -27,6 +27,9 @@ export type Doctor = {
   rating: number;
   fee: string;
   next: string;
+  experience: string;
+  bio: string;
+  tags: string[];
   photo: string;
 };
 
@@ -39,6 +42,9 @@ export const DOCTORS: Doctor[] = [
     rating: 4.9,
     fee: "$28",
     next: "Today 4:30 PM",
+    experience: "9 yrs",
+    bio: "Gentle cosmetic and restorative dentistry — veneers, whitening and painless root canals with same-day crowns.",
+    tags: ["Painless care", "Same-day crowns", "Kids friendly"],
     photo: doc1,
   },
   {
@@ -49,6 +55,9 @@ export const DOCTORS: Doctor[] = [
     rating: 4.8,
     fee: "$22",
     next: "Today 6:00 PM",
+    experience: "12 yrs",
+    bio: "Everyday illness, fever, diabetes and blood-pressure management with clear follow-up plans and lab reviews.",
+    tags: ["Diabetes care", "Lab review", "Video visits"],
     photo: doc2,
   },
   {
@@ -59,6 +68,9 @@ export const DOCTORS: Doctor[] = [
     rating: 4.7,
     fee: "$34",
     next: "Tomorrow 11:00 AM",
+    experience: "7 yrs",
+    bio: "Acne, pigmentation and hair-fall treatment plans built around your skin type, plus laser and peel sessions.",
+    tags: ["Acne plans", "Laser", "Hair fall"],
     photo: doc3,
   },
   {
@@ -69,6 +81,9 @@ export const DOCTORS: Doctor[] = [
     rating: 5.0,
     fee: "$26",
     next: "Tomorrow 9:15 AM",
+    experience: "15 yrs",
+    bio: "Newborn checkups, vaccinations and growth tracking — calm consults that parents actually leave reassured by.",
+    tags: ["Vaccination", "Newborn care", "Growth tracking"],
     photo: doc4,
   },
 ];
